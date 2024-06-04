@@ -12,10 +12,10 @@ function Game() {
     this.scene.add(this.group);
 
     this.camera = new THREE.OrthographicCamera(
-        window.innerWidth / -60,
-        window.innerWidth / 60,
-        window.innerHeight / 60,
-        window.innerHeight / -60,
+        window.innerWidth / -40,
+        window.innerWidth / 40,
+        window.innerHeight / 40,
+        window.innerHeight / -40,
         0.1, 5000);
     this.camera.position.set(100, 100, 100);
     this.camera.lookAt(new THREE.Vector3(0, 0, 0))
@@ -77,8 +77,8 @@ function Game() {
         // 设置缓存数组最大缓存多少个图形
         cubeMaxLen: 6,
         // 立方体内边缘之间的最小距离和最大距离
-        cubeMinDis: 2,
-        cubeMaxDis: 5,
+        cubeMinDis: 1,
+        cubeMaxDis: 8,
 
         // 模型Config
         modelConfig:  new ModelConfig(),
@@ -543,6 +543,9 @@ Object.assign(Game.prototype, {
     _updateScore: function (digit) {
         // 显示toast
         let t = document.querySelector('.MyToast');
+        let blindBox = document.querySelector('.blindBox');
+        let goblindbox = document.querySelector('.goblindbox');
+        
         t.innerHTML = `+${digit}`;
         t.classList.remove('disappear');
         setTimeout(() => {
@@ -550,6 +553,18 @@ Object.assign(Game.prototype, {
         }, 250);
         // 提高分数
         this.score+=digit;
+        if (this.score > 0) {
+            blindBox.style.display = 'block';
+            if (this.score <= 10) {
+                goblindbox.innerHTML = '1级盲盒';
+            }
+            if (this.score > 10 && this.score <= 20) {
+                goblindbox.innerHTML = '2级盲盒';
+            }
+            if (this.score > 20) {
+                goblindbox.innerHTML = '3级盲盒';
+            }
+        }
         console.log(this.score)
         document.getElementById('score').innerHTML = this.score;
     },

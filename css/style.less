@@ -153,11 +153,11 @@ body{
 .nav{
     position: absolute;
     left: 50%;
-    bottom: 2%;
+    bottom: 1%;
     transform: translate(-50%, -50%);
     height: 30px;
     z-index: 999;
-    width: 60vw;
+    width: 100%;
     height: 50px;
     ul{
         width: 100%;
@@ -167,15 +167,20 @@ body{
         li{
             border-radius: 5px;
             background-color: #b393fe;
-            padding:0 30px;
             text-align: center;
             list-style: none;
-            font-size: 22px;line-height: 50px;
+            padding: 0 10px;
+            font-size: 14px;line-height: 50px;
             cursor: pointer;
         }
         li:hover{
             background: #8855ff;
             color: #fff;
         }
+        .goblindbox{
+            padding: 0 30px;
+        }
     }
 }
+
+.blindBox{display: none;}

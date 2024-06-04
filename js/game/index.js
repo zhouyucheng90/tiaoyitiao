@@ -1,5 +1,6 @@
 const Game = require('./game')
 
+
 function init() {
     window.onload = function () {
         var game = new Game();
@@ -9,6 +10,7 @@ function init() {
         var startBtn = document.querySelector('.start-btn');
         var restartBtn = document.querySelector('.restart-btn');
         var scoreEl = document.querySelector('.score');
+        var login = document.querySelector('.login');
 
         startpage.style.display = 'flex';
         restartpage.style.display = 'none';
@@ -28,6 +30,11 @@ function init() {
             restartpage.style.display = 'flex';
             scoreEl.innerHTML = score;
         };
+
+        //登录
+        login.addEventListener('click', function () {
+            console.log('login')
+        });
     };
 }
 

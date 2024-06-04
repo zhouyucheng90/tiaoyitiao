@@ -150,3 +150,32 @@ body{
     transition-duration: 0.25s;
 }
 
+.nav{
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    z-index: 999;
+    width: 60vw;
+    height: 50px;
+    ul{
+        width: 100%;
+        padding: 0;margin: 0;
+        display: flex;
+        justify-content:space-around;
+        li{
+            border-radius: 5px;
+            background-color: #b393fe;
+            padding:0 30px;
+            text-align: center;
+            list-style: none;
+            font-size: 22px;line-height: 50px;
+            cursor: pointer;
+        }
+        li:hover{
+            background: #8855ff;
+            color: #fff;
+        }
+    }
+}

@@ -336,7 +336,7 @@ Object.assign(Game.prototype, {
     createPlane: function(){
         var planeGeo = new THREE.PlaneGeometry(100,100,10,10);//创建平面
         var planeMat = new THREE.MeshLambertMaterial({  //创建材料
-            color:0xFFFF33,
+            color:0xf5f5f5,
             wireframe:false
         });
         var planeMesh = new THREE.Mesh(planeGeo, planeMat);//创建网格模型
@@ -550,6 +550,7 @@ Object.assign(Game.prototype, {
         }, 250);
         // 提高分数
         this.score+=digit;
+        console.log(this.score)
         document.getElementById('score').innerHTML = this.score;
     },
 

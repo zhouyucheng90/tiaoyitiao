@@ -17,6 +17,7 @@ module.exports = {
         path: path.join(__dirname, "/dist")
     },
     optimization: {
+        minimize: false,
         splitChunks: {
             chunks: 'all',
             cacheGroups: {

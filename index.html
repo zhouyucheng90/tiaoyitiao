@@ -6,6 +6,14 @@
     <title> Jump </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=false">
     <link rel="stylesheet" href="https://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        console.log('T',Telegram)
+        Telegram.WebApp.ready();
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('user_id');
+        console.log('userId',userId)
+    </script>
 </head>
 
 <body>
@@ -44,5 +52,4 @@
     </div>
 </body>
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-
 </html>

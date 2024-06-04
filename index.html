@@ -6,6 +6,68 @@
     <title> Jump </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=false">
     <link rel="stylesheet" href="https://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+    <script>
+        const files = [
+            "/res/obj/cd.mtl",
+            "/res/obj/cd.obj",
+            "/res/obj/cheng.mtl",
+            "/res/obj/cheng.obj",
+            "/res/obj/d_hezi4.mtl",
+            "/res/obj/d_hezi4.obj",
+            "/res/obj/d_hezi5.mtl",
+            "/res/obj/d_hezi5.obj",
+            "/res/obj/d_pixiang.mtl",
+            "/res/obj/d_pixiang.obj",
+            "/res/obj/d_tiaotai.mtl",
+            "/res/obj/d_tiaotai.obj",
+            "/res/obj/d_xiaoniao.mtl",
+            "/res/obj/d_xiaoniao.obj",
+            "/res/obj/d_yuanzhu1.mtl",
+            "/res/obj/d_yuanzhu1.obj",
+            "/res/obj/dangao.mtl",
+            "/res/obj/dangao.obj",
+            "/res/obj/huaban.mtl",
+            "/res/obj/huaban.obj",
+            "/res/obj/pingtai1.mtl",
+            "/res/obj/pingtai1.obj",
+            "/res/obj/d_hezi4.mtl",
+            "/res/obj/d_hezi4.obj",
+            "/res/obj/q_shudun.obj",
+            "/res/obj/q_shudun.mtl",
+            "/res/obj/shoutixiang.obj",
+            "/res/obj/shoutixiang.mtl",
+            "/res/obj/shudun.mtl",
+            "/res/obj/shudun.obj",
+            "/res/obj/x_fangzhuo.mtl",
+            "/res/obj/x_fangzhuo.obj",
+            "/res/obj/x_hezi5.mtl",
+            "/res/obj/x_hezi5.obj",
+            "/res/obj/x_huaban.mtl",
+            "/res/obj/x_huaban.obj",
+            "/res/obj/x_xigua.mtl",
+            "/res/obj/x_xigua.obj",
+            "/res/obj/x_yuanzhu1.mtl",
+            "/res/obj/x_yuanzhu1.obj",
+        ];
+        console.log(1, files.length)
+        files.forEach(file => {
+        fetch(file)
+            .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error(`Failed to load file: ${file}`);
+            }
+            })
+            .then(data => {
+            // 处理加载的文件数据
+            // 在这里可以执行适当的操作，如渲染3D模型等
+            })
+            .catch(error => {
+            console.error(error);
+            });
+        });
+    </script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         console.log('T',Telegram)

@@ -436,6 +436,8 @@ Object.assign(Game.prototype, {
 
     _onMouseDown: function () {
         // console.log(this.speed, this.accelerate)
+        var navMenu = document.querySelector('.navMenu');
+        navMenu.classList.remove('showNavMenu');
         this.mouseState = -1;
         if (this.jumper.scale.y > 0.2) { //控制一个域值
             this.jumper.scale.y -= 0.01;

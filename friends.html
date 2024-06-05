@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Jump </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=false">
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+    <script>
+        const files = [
+            "cd.mtl",
+            "cd.obj",
+            "cheng.mtl",
+            "cheng.obj",
+            "d_hezi4.mtl",
+            "d_hezi4.obj",
+            "d_hezi5.mtl",
+            "d_hezi5.obj",
+            "d_pixiang.mtl",
+            "d_pixiang.obj",
+            "d_tiaotai.mtl",
+            "d_tiaotai.obj",
+            "d_xiaoniao.mtl",
+            "d_xiaoniao.obj",
+            "d_yuanzhu1.mtl",
+            "d_yuanzhu1.obj",
+            "dangao.mtl",
+            "dangao.obj",
+            "huaban.mtl",
+            "huaban.obj",
+            "pingtai1.mtl",
+            "pingtai1.obj",
+            "q_hezi4.mtl",
+            "q_hezi4.obj",
+            "q_shudun.obj",
+            "q_shudun.mtl",
+            "shoutixiang.obj",
+            "shoutixiang.mtl",
+            "shudun.mtl",
+            "shudun.obj",
+            "x_fangzhuo.mtl",
+            "x_fangzhuo.obj",
+            "x_hezi5.mtl",
+            "x_hezi5.obj",
+            "x_huaban.mtl",
+            "x_huaban.obj",
+            "x_xigua.mtl",
+            "x_xigua.obj",
+            "x_yuanzhu1.mtl",
+            "x_yuanzhu1.obj",
+        ];
+        console.log(1, files.length)
+        files.forEach(file => {
+        fetch('/jumpindex/res/obj/' + file)
+            .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error(`Failed to load file: ${file}`);
+            }
+            })
+            .then(data => {
+            // 处理加载的文件数据
+            // 在这里可以执行适当的操作，如渲染3D模型等
+            })
+            .catch(error => {
+            console.error(error);
+            });
+        });
+    </script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        console.log('T',Telegram)
+        Telegram.WebApp.ready();
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('user_id');
+        console.log('userId',userId)
+    </script>
+</head>
+
+<body>
+    <div class="page startPage">
+        <div id="logo">跳一跳</div>
+        <div class="btn start-btn"> GAME START <i class="fa fa-play-circle"></i>
+        </div>
+    </div>
+    <div class="page restartPage" style="display: none;">
+        <div id="final-score">
+            <div class="hint">== 本局分数 ==</div>
+            <div class="score"></div>
+            <div class="wrapper" style="position: absolute; top: 0; text-align: center; width: 100%;">
+                <img src="./res/img/particle.png" alt="">
+            </div>
+        </div>
+        <div class="btn restart-btn"> PLAY AGAIN <i class="fa fa-play-circle"></i>
+        </div>
+    </div>
+    <div class="MyToast disappear">
+    </div>
+    <div class="nav navMenu">
+        <ul>
+            <li class="login">
+                <div><img src="/res/img/team-01.png" alt="" srcset=""></div>
+                <div>Game</div>
+            </li>
+            <li>
+                <div><img src="/res/img/team-02.png" alt="" srcset=""></div>
+                <div>Friends</div>
+            </li>
+            <li>
+                <div><img src="/res/img/team-03.png" alt="" srcset=""></div>
+                <div>Quest</div>
+            </li>
+            <li>
+                <div><img src="/res/img/team-04.png" alt="" srcset=""></div>
+                <div>Ranking</div>
+            </li>
+        </ul>
+    </div>
+    <div class="nav blindBox">
+        <ul>
+            <li class="goblindbox">开盲盒</li>
+        </ul>
+    </div>
+</body>
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+</html>

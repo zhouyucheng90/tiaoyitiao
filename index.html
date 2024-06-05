@@ -51,7 +51,7 @@
         ];
         console.log(1, files.length)
         files.forEach(file => {
-        fetch('/jumpindex/res/obj/' + file)
+        fetch('./res/obj/' + file)
             .then(response => {
             if (response.ok) {
                 return response.text();
@@ -100,19 +100,19 @@
     <div class="nav navMenu">
         <ul>
             <li class="goGame">
-                <div><img src="/res/img/team-01.png" alt="" srcset=""></div>
+                <div><img src="./res/img/team-01.png" alt="" srcset=""></div>
                 <div>Game</div>
             </li>
             <li class="login">
-                <div><img src="/res/img/team-02.png" alt="" srcset=""></div>
+                <div><img src="./res/img/team-02.png" alt="" srcset=""></div>
                 <div>Friends</div>
             </li>
             <li>
-                <div><img src="/res/img/team-03.png" alt="" srcset=""></div>
+                <div><img src="./res/img/team-03.png" alt="" srcset=""></div>
                 <div>Quest</div>
             </li>
             <li>
-                <div><img src="/res/img/team-04.png" alt="" srcset=""></div>
+                <div><img src="./res/img/team-04.png" alt="" srcset=""></div>
                 <div>Ranking</div>
             </li>
         </ul>
